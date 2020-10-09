@@ -2,6 +2,9 @@ import React from 'react'
 import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
+import logo from '../../ganesh_banner1.jpg'
+import banner from '../../pngegg.png'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,9 +24,12 @@ export default function ButtonAppBar() {
 
     return (
         <div className={classes.root}>
-            <h1>Hello I am header</h1>
+            <header>
+                <img src={banner} alt="logo" width="100%" height="200" />
+            </header>
 
-            <AppBar position="static" color="red">
+
+            <AppBar position="static" color="orange">
                 <Toolbar backgroundColor="red">
                     <Typography variant="h6" className={classes.title}>
                         <Link to="/"><Button color="inherit">Home</Button></Link>

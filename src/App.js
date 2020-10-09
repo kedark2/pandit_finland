@@ -8,7 +8,7 @@ import Home from './components/content/Home'
 import Gallery from './components/content/Gallery'
 import About from './components/content/About'
 import Contact from './components/content/Contact'
-
+import ganesh from './pngegg.png'
 
 
 class App extends React.Component {
@@ -26,9 +26,6 @@ class App extends React.Component {
           <Route path="/contact" render={() =>
             <Contact />} />
         </Switch>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
         <Footer />
       </div>
     );
