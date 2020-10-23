@@ -41,6 +41,9 @@ export default function ButtonAppBar() {
                     <Typography variant="h6" className={classes.title}>
                         <Link to="/contact"><Button color="inherit">Contact</Button></Link>
                     </Typography>
+                    <Typography variant="h6" className={classes.title}>
+                        <Link to="/services"><Button color="inherit">Services</Button></Link>
+                    </Typography>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>

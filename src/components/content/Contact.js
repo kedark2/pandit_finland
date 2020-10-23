@@ -1,7 +1,28 @@
 import React from 'react'
-import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core'
+import { AppBar, Toolbar, makeStyles, Typography, Button, TextField } from '@material-ui/core'
 
-export default props =>
-    <div style={{ backgroundColor: "orange" }}>
-        <h5>This is Contact page</h5>
-    </div>
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '25ch',
+        },
+    },
+}));
+export default function Contact() {
+    const classes = useStyles();
+
+    return (
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <form className={classes.root} noValidate autoComplete="off">
+                <TextField id="outlined-basic" label="Full Name" variant="outlined" />
+                <br />
+                <TextField id="outlined-basic" label="email" variant="outlined" />
+                <br />
+                <TextField id="outlined-basic" label="Feedback" variant="outlined" />
+                <br />
+                <Button variant="contained" color="primary"> Submit</Button>
+            </form>
+        </div>
+    );
+}
