@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class Footer extends Component {
+class Footer extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+
+        }
+    }
     render() {
         return (
             <div>
@@ -13,3 +19,5 @@ export default class Footer extends Component {
         );
     }
 }
+
+export default Footer;

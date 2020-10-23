@@ -13,33 +13,32 @@ import Gall from './components/content/Gallery/Gallery'
 import getData from './data'
 import UserService from './components/content/ServicePage/UserComponent'
 import UserComponent from './components/content/ServicePage/UserComponent';
+import Admin from './components/admin/Admin'
+import ListServices from './components/admin/ListServices'
 
 
 class App extends React.Component {
 
+
   render() {
     let images = getData()
-    console.log(images)
     return (
       <div>
-        <Header></Header>
-        <div className="App">
-          <Switch>
-            <Route exact path="/" render={() =>
-              <Home />} />
-            <Route path="/gallery" render={() =>
-              <div className="gallery">
-                <Gall imgarr={images} />
-              </div>} />
-            <Route path="/about" render={() =>
-              <About />} />
-            <Route path="/contact" render={() =>
-              <Contact />} />
-            <Route path="/services" render={() =>
-              <UserComponent />} />
-          </Switch>
+        <div className="app">
+          <Header></Header>
+          <div className="container">
+            <Switch>
+              <Route exact path="/" render={() =>
+                <Home />} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/services" component={ListServices} />
+            </Switch>
+          </div>
           <Footer />
+
         </div>
+
       </div>
     );
   }
