@@ -1,55 +1,42 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import Column from './Column'
+import React, { Component } from 'react'
+import Services from '../../../services/Services'
 
-const getColumns = (imgarr, col) => {
-    let images = []
-    for (let i = 0; i < col; i++) {
-        images.push([])
+
+
+export default class Gallery extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            pujas: []
+        }
     }
+    componentDidMount() {
+        Services.getPujaDetail().then((res) => {
+            this.setState({
+                pujas: res.data
+            })
+        })
+    }
+    render() {
+        console.log(this.state.pujas)
 
-    let sum = 0;
-    imgarr.forEach(img => {
-        sum += Number(img.height);
-    });
-
-    let threshold = Math.floor(sum / col);
-    let current = 0;
-    let l = 0;
-
-    imgarr.forEach(img => {
-        current += (img.height)
-        if ((current + img.height) >= threshold) {
-            if (l != col - 1) { l += 1 }
-            current = img.height;
-            images[l].push(img)
-        } else {
-            current += img.height;
-            images[l].push(img)
-        }
-    })
-    return images
+        return (
+            <div className="container">
+                <div className="row" style={{ margin: "10px 0 10px 0" }}>
+                    {
+                        this.state.pujas.map(puja =>
+                            <div class="col-12 col-sm-6 col-md-8">
+                                <div class="card" style={{ width: "18rem" }}>
+                                    <img class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{puja.pujaName}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+        )
+    }
 }
-
-function Gallery({ imgarr }) {
-    let [columns, setColumns] = useState([]);
-    useEffect(() => {
-        let mql = window.matchMedia("all and (max-width: 800px)")
-        if (mql.matches) {
-            setColumns(getColumns(imgarr, 2));
-        } else {
-            setColumns(getColumns(imgarr, 4));
-        }
-    }, [])
-
-    return (
-        <Fragment className={Gallery}>
-            {
-                columns.map((img, i) => {
-                    return <Column key={i} images={img} />
-                })
-            }
-        </Fragment>
-    )
-}
-
-export default Gallery

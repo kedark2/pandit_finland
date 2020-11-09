@@ -5,29 +5,33 @@ export default class About extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            puja: []
+            employees: []
         }
     }
     componentDidMount() {
-        Services.getPujaDetail().then((res) => {
+        Services.getEmployee().then((res) => {
             this.setState({
-                puja: res.data
+                employees: res.data
             })
         })
     }
     render() {
-        console.log(this.puja)
-
+        console.log(this.state.employees)
         return (
-            <div>
-                <div class="card" style={{ width: "18rem" }}>
-                    <img class="card-img-top" src="https://res.cloudinary.com/rajansu/image/upload/v1604939174/IMG_20190523_195103_priak8.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Know More</a>
-                    </div>
-                </div>
+            <div className="row" >
+                {
+                    this.state.employees.map(employee =>
+                        <div class="card" style={{ width: "18rem", margin: "10px 10px 0 0" }}>
+                            <img class="card-img-top" src={employee.photo} alt="Card image cap" />
+                            <div class="card-body">
+                                <h5 class="card-title">{employee.firstName} {employee.lastName}</h5>
+                                <h6>{employee.emailId}</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Know More</a>
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         )
     }

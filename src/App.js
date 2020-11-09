@@ -32,6 +32,8 @@ class App extends React.Component {
                 <Home />} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
+              <Route path="/gallery" component={Gallery} />
+
               <Route path="/services" component={ListServices} />
             </Switch>
           </div>

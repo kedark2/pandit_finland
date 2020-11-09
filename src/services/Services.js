@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const SERVICES_REST_API_URL = "http://localhost:9090/api/v1/services";
 const PUJA_DETAIL_REST_API_URL = "http://localhost:9090/api/v1/puja_detail"
+const EMPLOYEE_REST_API_URL = "http://localhost:9090/api/v1/employees"
 
 class Services {
     getServices() {
@@ -26,6 +27,10 @@ class Services {
 
     getPujaDetail() {
         return axios.get(PUJA_DETAIL_REST_API_URL);
+    }
+
+    getEmployee() {
+        return axios.get(EMPLOYEE_REST_API_URL)
     }
 }
 
