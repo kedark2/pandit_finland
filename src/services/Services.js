@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const SERVICES_REST_API_URL = "http://localhost:9090/api/v1/services";
+const PUJA_DETAIL_REST_API_URL = "http://localhost:9090/api/v1/puja_detail"
 
 class Services {
     getServices() {
@@ -8,19 +9,23 @@ class Services {
     }
 
     createServices(service) {
-        return axios.post(SERVICES_REST_API_URL, service)
+        return axios.post(SERVICES_REST_API_URL, service);
     }
 
     getServicesById(serviceId) {
-        return axios.get(SERVICES_REST_API_URL + '/' + serviceId)
+        return axios.get(SERVICES_REST_API_URL + '/' + serviceId);
     }
 
     updateServices(service, serviceId) {
-        return axios.put(SERVICES_REST_API_URL + '/' + serviceId, service)
+        return axios.put(SERVICES_REST_API_URL + '/' + serviceId, service);
     }
 
     deleteServices(serviceId) {
-        return axios.delete(SERVICES_REST_API_URL + '/' + serviceId)
+        return axios.delete(SERVICES_REST_API_URL + '/' + serviceId);
+    }
+
+    getPujaDetail() {
+        return axios.get(PUJA_DETAIL_REST_API_URL);
     }
 }
 

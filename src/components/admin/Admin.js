@@ -6,6 +6,7 @@ export default class Admin extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <h1>Hello from admin</h1>
                 <Footer />
             </div>

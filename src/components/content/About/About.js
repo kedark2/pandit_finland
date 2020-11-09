@@ -1,19 +1,34 @@
-import React from 'react'
-import Grid from '@material-ui/core/Grid'
-import Card from './Card'
+import React, { Component } from 'react'
+import Services from '../../../services/Services'
 
-export default function About() {
-    return (
-        <Grid container spacing={2}>
-            <Grid item xs={12}>
-                <Card />
+export default class About extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            puja: []
+        }
+    }
+    componentDidMount() {
+        Services.getPujaDetail().then((res) => {
+            this.setState({
+                puja: res.data
+            })
+        })
+    }
+    render() {
+        console.log(this.puja)
 
-            </Grid>
-            <Grid item xs={12}>
-                <Card />
-
-            </Grid>
-        </Grid>
-
-    )
+        return (
+            <div>
+                <div class="card" style={{ width: "18rem" }}>
+                    <img class="card-img-top" src="https://res.cloudinary.com/rajansu/image/upload/v1604939174/IMG_20190523_195103_priak8.jpg" alt="Card image cap" />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Know More</a>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }

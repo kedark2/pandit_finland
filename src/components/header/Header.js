@@ -23,12 +23,11 @@ export default function Header() {
     const classes = useStyles();
 
     return (
+
         <div className={classes.root}>
             <header>
                 <img src={banner} alt="logo" width="100%" height="200" />
             </header>
-
-
             <AppBar position="static" color="orange">
                 <Toolbar backgroundColor="red">
                     <Typography variant="h6" className={classes.title}>
