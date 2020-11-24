@@ -116,3 +116,7 @@
   color: cornflowerblue;
   font-weight: 500;
 }
+
+.rightlink, .leftlink {display: inline}
+.rightlink{float: right;}
+.leftlink{float: left;}

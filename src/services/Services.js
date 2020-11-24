@@ -3,6 +3,7 @@ import axios from 'axios'
 const SERVICES_REST_API_URL = "http://localhost:9090/api/v1/services";
 const PUJA_DETAIL_REST_API_URL = "http://localhost:9090/api/v1/puja_detail"
 const EMPLOYEE_REST_API_URL = "http://localhost:9090/api/v1/employees"
+const MANTRAS_REST_API_URL = "http://localhost:9090/api/v1/mantras"
 
 class Services {
     getServices() {
@@ -31,6 +32,10 @@ class Services {
 
     getEmployee() {
         return axios.get(EMPLOYEE_REST_API_URL)
+    }
+
+    getMantras() {
+        return axios.get(MANTRAS_REST_API_URL)
     }
 }
 
