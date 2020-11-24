@@ -2,7 +2,7 @@ import React from 'react'
 import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
-import logo from '../../ganesh_banner1.jpg'
+import logo from '../../banner_1.png'
 import banner from '../../pngegg.png'
 
 
@@ -26,7 +26,7 @@ export default function Header() {
 
         <div className={classes.root}>
             <header>
-                <img src={banner} alt="logo" width="100%" height="200" />
+                <img src={logo} alt="logo" width="100%" height="100" />
             </header>
             <AppBar position="static" color="orange">
                 <Toolbar backgroundColor="red">

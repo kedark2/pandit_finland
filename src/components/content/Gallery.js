@@ -22,7 +22,7 @@ export default class Gallery extends Component {
 
         return (
             <div className="container">
-                <div className="row" >
+                <div className="row" style={{marginBottom:"15px"}}>
                     {
                         this.state.photos.map(photo =>
                             <div class="card" style={{ width: "20rem", margin: "10px 10px 0 0" }}>

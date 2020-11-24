@@ -18,7 +18,7 @@ export default class About extends Component {
     render() {
         console.log(this.state.employees)
         return (
-            <div className="row" >
+            <div className="row" style={{ marginBottom: "15px" }}>
                 {
                     this.state.employees.map(employee =>
                         <div class="card" style={{ width: "18rem", margin: "10px 10px 0 0" }}>
