@@ -15,6 +15,7 @@ import UserService from './components/content/ServicePage/UserComponent'
 import UserComponent from './components/content/ServicePage/UserComponent';
 import Admin from './components/admin/Admin'
 import ListServices from './components/admin/ListServices'
+import Mantras from './components/content/Mantras'
 
 
 class App extends React.Component {
@@ -33,8 +34,8 @@ class App extends React.Component {
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/gallery" component={Gallery} />
-
               <Route path="/services" component={ListServices} />
+              <Route path="/mantras" component={Mantras} />
             </Switch>
           </div>
           <Footer />

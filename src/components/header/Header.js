@@ -43,7 +43,9 @@ export default function Header() {
                     <Typography variant="h6" className={classes.title}>
                         <Link to="/services"><Button color="inherit">Services</Button></Link>
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Typography variant="h6" className={classes.title}>
+                        <Link to="/mantras"><Button color="inherit">Mantras</Button></Link>
+                    </Typography>
                 </Toolbar>
             </AppBar>
         </div>

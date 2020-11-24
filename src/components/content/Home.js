@@ -28,22 +28,21 @@ export default class Home extends Component {
 
         return (
             <div className="row">
-
-                <RightPane styles={styles} />
-
-                <LeftPane styles={styles} />
                 {
                     this.state.pujas.map(puja =>
-                        <div class="card" style={{ width: "18rem" }}>
-                            <img class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" />
+                        <div class="card" style={{ width: "18rem", margin: "10px 10px 0 0" }}>
                             <div class="card-body">
-                                <h5 class="card-title">{puja.pujaName}</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Know More</a>
+                                <h3 class="card-title">{puja.pujaName}</h3>
+                                <p class="card-text">{puja.pujaDescription}</p>
+                                <h5>Items needed : {puja.pujaItems}</h5>
                             </div>
                         </div>
                     )
                 }
+
+                <RightPane styles={styles} />
+
+                <LeftPane styles={styles} />
             </div>
         )
     }

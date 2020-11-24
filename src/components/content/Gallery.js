@@ -22,15 +22,13 @@ export default class Gallery extends Component {
 
         return (
             <div className="container">
-                <div className="row" style={{ margin: "10px 0 10px 0" }}>
+                <div className="row" >
                     {
                         this.state.pujas.map(puja =>
-                            <div class="col-12 col-sm-6 col-md-8">
-                                <div class="card" style={{ width: "18rem" }}>
-                                    <img class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" />
-                                    <div class="card-body">
-                                        <h5 class="card-title">{puja.pujaName}</h5>
-                                    </div>
+                            <div class="card" style={{ width: "20rem", margin: "10px 10px 0 0" }}>
+                                <img class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" style={{ height: "20rem" }} />
+                                <div class="card-body">
+                                    <h5 class="card-title">{puja.pujaName}</h5>
                                 </div>
                             </div>
                         )
@@ -40,3 +38,4 @@ export default class Gallery extends Component {
         )
     }
 }
+
