@@ -7,28 +7,28 @@ export default class Gallery extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            pujas: []
+            photos: []
         }
     }
     componentDidMount() {
-        Services.getPujaDetail().then((res) => {
+        Services.getPhotos().then((res) => {
             this.setState({
-                pujas: res.data
+                photos: res.data
             })
         })
     }
     render() {
-        console.log(this.state.pujas)
+        console.log(this.state.photos)
 
         return (
             <div className="container">
                 <div className="row" >
                     {
-                        this.state.pujas.map(puja =>
+                        this.state.photos.map(photo =>
                             <div class="card" style={{ width: "20rem", margin: "10px 10px 0 0" }}>
-                                <img class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" style={{ height: "20rem" }} />
+                                <img class="card-img-top" src={photo.photoUrl} alt="Card image cap" style={{ height: "20rem" }} />
                                 <div class="card-body">
-                                    <h5 class="card-title">{puja.pujaName}</h5>
+                                    <h5 class="card-title">{photo.photoTitle}</h5>
                                 </div>
                             </div>
                         )

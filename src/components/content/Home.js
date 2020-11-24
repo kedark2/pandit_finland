@@ -32,10 +32,13 @@ export default class Home extends Component {
                     this.state.pujas.map(puja =>
                         <div class="card" style={{ width: "18rem", margin: "10px 10px 0 0" }}>
                             <div class="card-body">
-                                <img style={{ height: "50px", width: "50px", alignContent: "center" }} class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" />
-                                <h3 class="card-title">{puja.pujaName}</h3>
+                                <div style={{ height: "50px", width: "250px", display: "flex", justifyContent: "center" }}>
+                                    <img style={{ height: "50px", width: "50px", display: "flex", justifyContent: "center" }} class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" />
+                                </div>
+                                <h3 class="card-title" style={{ textAlign: "center" }}>{puja.pujaName}</h3>
                                 <p class="card-text">{puja.pujaDescription}</p>
-                                <h5>Items needed : {puja.pujaItems}</h5>
+                                <hr />
+                                <h6>Items needed : </h6>{puja.pujaItems}
                             </div>
                         </div>
                     )
@@ -43,4 +46,6 @@ export default class Home extends Component {
             </div>
         )
     }
+
 }
+

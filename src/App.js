@@ -9,14 +9,12 @@ import Gallery from './components/content/Gallery'
 import About from './components/content/About/About'
 import Contact from './components/content/Contact'
 import ganesh from './pngegg.png'
-import Gall from './components/content/Gallery/Gallery'
 import getData from './data'
 import UserService from './components/content/ServicePage/UserComponent'
 import UserComponent from './components/content/ServicePage/UserComponent';
 import Admin from './components/admin/Admin'
 import ListServices from './components/admin/ListServices'
 import Mantras from './components/content/Mantras'
-
 
 class App extends React.Component {
 

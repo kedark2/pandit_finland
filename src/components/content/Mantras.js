@@ -10,7 +10,7 @@ class Mantras extends Component {
         this.state = {
             mantras: [],
             showing: false,
-            text: 'kale',
+            text: 'Select the Mantras you want to read on the left.',
 
         }
     }
@@ -25,21 +25,23 @@ class Mantras extends Component {
         const { showing } = this.state;
         console.log(this.state.mantras)
         return (
-            <div className="Mantras">
-                <div >
-                    {
-                        this.state.mantras.map(mantra =>
-                            <div>
+            <div className="container">
+                <div className="row" style={{ margin: "15px 0 15px 0" }}>
+                    <div className="col-md-auto" >
+                        {
+                            this.state.mantras.map(mantra =>
                                 <div>
-                                    <button key={mantra.id} type="button" onClick={() => this.setState({ text: mantra.mantra })} class="list-group-item list-group-item-action active">
-                                        {mantra.mantraTitle}
-                                    </button>
+                                    <div>
+                                        <button key={mantra.id} type="button" onClick={() => this.setState({ text: mantra.mantra })} class="list-group-item list-group-item-action">
+                                            {mantra.mantraTitle}
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    }
+                            )
+                        }
+                    </div>
+                    <div className="col" dangerouslySetInnerHTML={{ __html: `${this.state.text}` }}></div>
                 </div>
-                <div ><h3>{this.state.text}</h3></div>
             </div>
         )
 
