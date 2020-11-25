@@ -22,10 +22,10 @@ export default class Gallery extends Component {
 
         return (
 
-            <div className="row" style={{ marginBottom: "15px" }}>
+            <div className="row" style={{ textAlign: "center", marginBottom: "15px" }}>
                 {
                     this.state.photos.map(photo =>
-                        <div class="card" style={{ width: "20rem", margin: "10px 0px 10px 25px" }}>
+                        <div class="card" style={{ width: "25rem", margin: "10px 0px 10px 30px" }}>
                             <img class="card-img-top" src={photo.photoUrl} alt="Card image cap" style={{ height: "20rem" }} />
                             <div class="card-body">
                                 <h5 class="card-title">{photo.photoTitle}</h5>

@@ -92,7 +92,7 @@
     width: 45vw;
   }
 }
-.footer{
+.footers{
   position: relative;
   bottom :0;
   width: 100%;
@@ -120,3 +120,13 @@
 .rightlink, .leftlink {display: inline}
 .rightlink{float: right;}
 .leftlink{float: left;}
+
+.custom-card-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+}

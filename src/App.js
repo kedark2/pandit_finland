@@ -22,10 +22,10 @@ class App extends React.Component {
   render() {
     let images = getData()
     return (
-      <div>
+      <div style={{ backgroundColor: "#f2f2f2" }}>
         <div>
           <Header></Header>
-          <div className="container" style={{ backgroundColor: "#f1eae2", maxWidth: "1440px" }}>
+          <div className="container" style={{ backgroundColor: "#f2f2f2", maxWidth: "1440px" }}>
             <Switch>
               <Route exact path="/" render={() =>
                 <Home />} />

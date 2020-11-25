@@ -19,8 +19,7 @@ export default class About extends Component {
         console.log(this.state.employees)
         return (
             <div>
-
-                <div class="row" >
+                <div class="row" style={{ backgroundColor: "#ff9934" }}>
 
                     <div class="col-sm-6 col-md-6 col-xs-12 image-container" style={{ margin: "10px 0 0 10px" }}>
                         <img src={"https://res.cloudinary.com/rajansu/image/upload/v1606294598/karmakanda_hqzkkp.jpg"} style={{ height: "200px", marginLeft: "-15px" }} />
@@ -39,21 +38,22 @@ export default class About extends Component {
                             We have professionals pandits who will help you to do karmakanda</p>
                     </div>
                 </div>
-                <div className="row" style={{ marginBottom: "15px" }}>
-                    {
-                        this.state.employees.map(employee =>
-                            <div class="card" style={{ width: "18rem", margin: "10px 0px 10px 10px" }}>
-                                <img class="card-img-top" src={employee.photo} alt="Card image cap" style={{ height: "15rem" }} />
-                                <div class="card-body">
-                                    <h5 class="card-title">{employee.firstName} {employee.lastName}</h5>
-                                    <h6>{employee.emailId}</h6>
-                                    <p class="card-text">{employee.details}</p>
-                                    <a href="#" class="btn btn-primary">Know More</a>
+                <div className="container-fluid">
+                    <div className="row text-center justify-content-center" style={{ marginBottom: "15px", textAlign: "center" }}>
+                        {
+                            this.state.employees.map(employee =>
+                                <div class="card" style={{ width: "18rem", margin: "10px 0px 10px 10px" }}>
+                                    <img class="card-img-top" src={employee.photo} alt="Card image cap" style={{ height: "15rem" }} />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{employee.firstName} {employee.lastName}</h5>
+                                        <h6>{employee.emailId}</h6>
+                                        <p class="card-text">{employee.details}</p>
+                                        <a href="#" class="btn btn-primary">Know More</a>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    }
-                </div>
+                            )
+                        }
+                    </div></div>
             </div>
         )
     }
