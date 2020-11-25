@@ -25,23 +25,21 @@ class Mantras extends Component {
         const { showing } = this.state;
         console.log(this.state.mantras)
         return (
-            <div className="container">
-                <div className="row" style={{ margin: "15px 0 15px 0" }}>
-                    <div className="col-md-auto" >
-                        {
-                            this.state.mantras.map(mantra =>
+            <div className="row" >
+                <div className="col-md-auto" style={{ margin: "15px 0 15px 0" }}>
+                    {
+                        this.state.mantras.map(mantra =>
+                            <div>
                                 <div>
-                                    <div>
-                                        <button key={mantra.id} type="button" onClick={() => this.setState({ text: mantra.mantra })} class="list-group-item list-group-item-action">
-                                            {mantra.mantraTitle}
-                                        </button>
-                                    </div>
+                                    <button key={mantra.id} type="button" onClick={() => this.setState({ text: mantra.mantra })} class="list-group-item list-group-item-action">
+                                        {mantra.mantraTitle}
+                                    </button>
                                 </div>
-                            )
-                        }
-                    </div>
-                    <div className="col" dangerouslySetInnerHTML={{ __html: `${this.state.text}` }}></div>
+                            </div>
+                        )
+                    }
                 </div>
+                <div style={{ margin: "15px 0 15px 0" }} className="col" dangerouslySetInnerHTML={{ __html: `${this.state.text}` }}></div>
             </div>
         )
 

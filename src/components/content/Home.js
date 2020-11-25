@@ -27,10 +27,10 @@ export default class Home extends Component {
         console.log(this.state.pujas)
 
         return (
-            <div className="row">
+            <div className="row" style={{ backgroundColor: "#f1eae2" }}>
                 {
                     this.state.pujas.map(puja =>
-                        <div class="card" style={{ width: "18rem", margin: "10px 10px 0 0" }}>
+                        <div class="card" style={{ width: "18rem", margin: "10px 0px 10px 10px", display: "flex", justifyContent: "center" }}>
                             <div class="card-body">
                                 <div style={{ height: "50px", width: "250px", display: "flex", justifyContent: "center" }}>
                                     <img style={{ height: "50px", width: "50px", display: "flex", justifyContent: "center" }} class="card-img-top" src={puja.pujaPhoto} alt="Card image cap" />

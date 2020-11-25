@@ -17,8 +17,8 @@ class UserComponent extends React.Component {
     }
     render() {
         return (
-            <div>
-                <h1 className="text-center">Available Services</h1>
+            <div className="container">
+                <h1 className="text-center" style={{ backgroundColor: "red" }}>Available Services</h1>
                 <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead class="thead-dark table-secondary">

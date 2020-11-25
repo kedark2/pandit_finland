@@ -40,13 +40,14 @@ class ListServices extends Component {
 
         return (
             <div>
-                <h2 className="text-center">Available Services</h2>
+
                 <div className="row">
+                    <h2 className="text-center" style={{ backgroundColor: "#e8d9d9", width: "100%" }}>Available Services</h2>
                     <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>Service Name</th>
-                                <th>Service Price</th>
+                                <th>Service Price (€)</th>
                                 <th>Service Provider</th>
                             </tr>
                         </thead>

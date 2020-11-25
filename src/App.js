@@ -23,9 +23,9 @@ class App extends React.Component {
     let images = getData()
     return (
       <div>
-        <div className="app">
+        <div>
           <Header></Header>
-          <div className="container">
+          <div className="container" style={{ backgroundColor: "#f1eae2", maxWidth: "1440px" }}>
             <Switch>
               <Route exact path="/" render={() =>
                 <Home />} />
@@ -40,7 +40,7 @@ class App extends React.Component {
 
         </div>
 
-      </div>
+      </div >
     );
   }
 }
